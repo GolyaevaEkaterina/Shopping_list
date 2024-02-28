@@ -8,8 +8,11 @@ function Element(props){
                <p>{number}.</p>
                <p>{element.name}</p>
             </div>
-            <button className="bg-fuchsia-600 text-white text-xl">{add}</button>
-            <button onClick={onClick} className="text-indigo-600 hover:text-fuchsia-600 text-2xl"><i class="fa-solid fa-trash"></i></button>
+            <div className="flex gap-4">
+               <button onClick={onClickAdd} className="bg-fuchsia-400 text-white text-xl rounded-md p-2 hover:bg-fuchsia-600">{add}</button>
+               <button onClick={onClick} className="text-indigo-600 hover:text-fuchsia-600 text-2xl"><i class="fa-solid fa-trash"></i></button>
+            </div>
+            
         </div>
     )
 }

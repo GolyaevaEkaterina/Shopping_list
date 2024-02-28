@@ -24,12 +24,12 @@ function App() {
     {
       id: 4,
       name: "Порошок",
-      added: false
+      added: true
     },
     {
       id: 5,
       name: "Минералка",
-      added: false
+      added: true
     },
     {
       id: 6,
@@ -43,20 +43,15 @@ function App() {
      setElement(filteredElements)
   }
 
-  
-
-
-
-  // function add(element){
-  //    if(element.added === false){
-  //      element.added = true
-  //      setElement(elements)
-  //    } 
-  //     element.added = false
-  //      setElement(elements)
-     
-  //    console.log(elements)
-  // }
+  function add(element){
+     if(element.added === false){
+       element.added = true
+     } 
+     if(element.added === true){
+      element.added = false
+     }
+    //  setElement(elements)
+  }
 
  
   return (
@@ -66,17 +61,14 @@ function App() {
         {elements.map((element) => {
           if(element.added === false){
             return(            
-              <Element key={element.id} element={element} onClick={() => deleteElement(element.id)} number={elements.indexOf(element) + 1} add={"Добавлено"} />  
+              <Element key={element.id} element={element} onClick={() => deleteElement(element.id)} number={elements.indexOf(element) + 1} add={"Добавлено"} onClickAdd={add(element)}/>  
             )
           }
           if(element.added === true){
             return(            
-              <Element key={element.id} element={element} onClick={() => deleteElement(element.id)} number={elements.indexOf(element) + 1} add={"Добавить"} />  
+              <Element key={element.id} element={element} onClick={() => deleteElement(element.id)} number={elements.indexOf(element) + 1} add={"Добавить"} onClickAdd={add(element)}/>  
             )
           }
-          // return(            
-          //   <Element key={element.id} element={element} onClick={() => deleteElement(element.id)} number={elements.indexOf(element) + 1} add={title}/>  
-          // )
         })}
       </div>
     </div>
