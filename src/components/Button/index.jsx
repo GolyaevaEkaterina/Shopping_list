@@ -1,7 +1,8 @@
-function Button(){
+function Button(props){
+    const { onClick, children } = props
    
     return(
-        <button className="text-indigo-600 hover:text-fuchsia-600 text-2xl"><i class="fa-solid fa-trash"></i></button>
+        <button onClick={onClick} className="text-indigo-600 hover:text-fuchsia-600 text-2xl">{children}</button>
     )
 }
 export default Button;
