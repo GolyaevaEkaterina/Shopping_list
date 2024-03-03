@@ -44,7 +44,6 @@ function App() {
   }
 
   function add(element){
-    const newElements = []
     const indx = elements.indexOf(element)
     if(element.added === true){
       const x={
@@ -62,9 +61,7 @@ function App() {
       }
       elements.splice(indx, 1, x)    
     }
-    elements.forEach(element => {
-      newElements.push(element)
-    })
+    const newElements = [...elements]
     setElement(newElements) 
   }
  

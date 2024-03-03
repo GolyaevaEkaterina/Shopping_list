@@ -1,7 +1,6 @@
 import Button from "components/Button";
 
-function Element(props){
-    const { element, onClick, number, onClickAdd, add } = props
+function Element({element, onClick, number, onClickAdd, add}){
     return(
         <div className="flex justify-between border-b-fuchsia-200 border-b-solid border-b-2">
             <div className="flex gap-4 text-2xl text-indigo-700 ">
