@@ -44,14 +44,15 @@ function App() {
   }
 
   function add(element){
-    const indx = elements.indexOf(element)
+    const newElements = [...elements]
+    const indx = newElements.indexOf(element)
     if(element.added === true){
       const x={
         id: element.id,
         name: element.name,
         added: false
       }
-      elements.splice(indx, 1, x)     
+      newElements.splice(indx, 1, x)     
     } else
     if(element.added === false){
       const x={
@@ -59,9 +60,9 @@ function App() {
         name: element.name,
         added: true
       }
-      elements.splice(indx, 1, x)    
+      newElements.splice(indx, 1, x)    
     }
-    const newElements = [...elements]
+    
     setElement(newElements) 
   }
  
